@@ -15,10 +15,11 @@ I am connected to {} servers.'''.format(bot.user.name, len(bot.guilds)))
 
 
 @bot.slash_command(
+    guild_ids=[859565691597226016],
     name = 'ping'
 )
 async def ping(ctx):
-    await ctx.send('Pong')
+    await ctx.send('Pong {}ms'.format(round(bot.latency * 100, 0)))
 
 
 
